@@ -1,0 +1,27 @@
+.form-signin {
+  max-width: 23em;
+  min-height: 20em;
+  margin: 0 auto;
+}
+.form-control {
+  color: #eee;
+  font-size: 16px;
+  text-align: center;
+  height: auto;
+  padding: 6px 10px;
+}
+.form-control:focus {
+  z-index: 2;
+}
+input[type=text] {
+  background-color: #444;
+  margin-bottom: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+input[type=password] {
+  background-color: #444;
+  margin-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

@@ -1,0 +1,40 @@
+.cuerpo {
+  color: #eee;
+  background-color: #444;
+}
+.sin-margen {
+  margin: 0px;
+}
+.rojo {
+  color: #d54;
+}
+.verde {
+  color: #4a4;
+}
+.gris {
+  color: gray;
+}
+.fondo-negro {
+  color: #eee !important;
+  background-color: #222 !important;
+}
+.fondo-gris {
+  color: #eee;
+  background-color: #444;
+}
+.fondo-rojo {
+  background-color: #d2322d;
+}
+
+.btn-pad {
+  margin: 5px;
+}
+.btn-cajas {
+  font-size: 30px;
+  width: 57px;
+}
+.btn-areas {
+  font-size: 30px;
+  margin: 0 2.5%;
+  width: 45%;
+}

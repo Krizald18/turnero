@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);
+body {
+  line-height: 1.42857143;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #eee;
+  background-color: #222;
+}
+table {
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  width: 100%;
+  height: auto;
+}
+td, th {
+  font-size: 29em;
+  text-align: center;
+  height: 1.3em;
+  border: 0.05em solid #1aa;
+}
+th {
+  background-color: #a11;
+}
+/*td:hover, th:hover {
+  background-color: #2bb;
+}*/
+#turno {
+  width: 3.8em;
+}
+#caja {
+  width: 2.8em;
+}
+#modulos {
+  text-align: left;
+  padding: 0em 0.3em;
+}
+#mensaje {
+  font-size: 20em;
+  text-align: center;
+  background-color: #1aa;
+  border: 0.1em solid #999;
+  border-radius: 1em;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.alertax {
+  background: #26d;
+  border-color: #d92 !important;
+}
+.turnox {
+  background: #222;
+}

@@ -1,0 +1,31 @@
+.btn-areas, .btn-cajas {
+  font-size: 32px;
+}
+.btn-cajas {
+  width: 60px;
+  margin: 5px;
+}
+.div-seleccion {
+  justify-content: justify;
+  width: 420px;
+  margin: auto;
+}
+.panel-grande {
+  min-height: 257px;
+  margin: 0;
+}
+.panel-arriba {
+  min-height: 132px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 0;
+}
+.panel-abajo {
+  min-height: 125px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0;
+}
+.correccion {
+  border-radius: 0;
+}

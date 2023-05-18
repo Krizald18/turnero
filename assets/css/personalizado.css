@@ -1,0 +1,53 @@
+body {
+  line-height: 1;
+}
+.panel-success {
+  border-color: #5b5;
+}
+.panel-success > .panel-heading {
+  color: #fff;
+  background-color: #5b5;
+  border-color: #5b5;
+}
+.panel-success > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-success > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+
+/*
+| Panel-danger
+*/
+.panel-danger {
+  border-color: #d9534f;
+}
+.panel-danger > .panel-heading {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+.panel-danger > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #ebccd1;
+}
+.panel-danger > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #ebccd1;
+}
+.panel-heading, .panel-body, .panel-footer {
+  padding: 1rem;
+}
+.jumbotron {
+  padding: 17px 60px 28px;
+}
+.btn {
+  border: none;
+}
+.btn + .btn {
+  margin-top: 5px;
+}
+.btn-block + .btn-block{
+  margin-top: 5px;
+}
+.col-md-3, .col-md-6 {
+  padding: 0 23px;
+}
