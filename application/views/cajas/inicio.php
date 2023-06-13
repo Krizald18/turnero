@@ -13,12 +13,16 @@
         {id: 1, area: 'Matrimonios'},
         {id: 2, area: 'Nacimientos'}
       ];
+
+      // Almacena todas las cajas en la variable 'cajas'
       $http({
         method: 'POST',
         url: API_ROOT + 'cajas/cargarCajas',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         data: null
       }).then(response => $scope.cajas = response.data);
+
+      // Almacena todos los módulos en la variable modulos
       $http({
         method: 'POST',
         url: API_ROOT + 'cajas/cargarModulos',
@@ -26,10 +30,19 @@
         data: null
       }).then(response => $scope.modulos = response.data);
 
+      /**
+       * Al presionar uno de los botones de área, asigna ese valor a la
+       * variable seleccionaArea
+       */
       $scope.seleccionaArea = area => {
         $scope.areaSeleccionada = area;
       }
 
+      /**
+       * Envía la información almacenada en caja.idcaja al presionar un botón
+       * de cajas, guarda los módulos asignados a esa caja en la variable
+       * listaModulos
+       */
       $scope.seleccionaCaja = caja => {
         $scope.caja = caja;
         $http({
@@ -40,15 +53,25 @@
         }).then(response => $scope.listaModulos = response.data);
       }
 
+      /**
+       * Para regresar a la página de selección de área, se borra el valor
+       * almacenado en areaSeleccionada
+       */
       $scope.regresar = () => {
         $scope.areaSeleccionada = null;
       }
 
+      /**
+       * Filtra las cajas dependiendo del área seleccionada
+       */
       $scope.cajasFiltradas = () =>
         $scope.cajas.filter(
           c => Number(c.idarea) === Number($scope.areaSeleccionada.id)
         );
 
+      /**
+       * Obtiene el primer módulo almacenado en la variable modulos.modulo
+       */
       $scope.getmodulo = idmodulo =>
         $scope.modulos.filter(m => m.idmodulo == idmodulo)[0].modulo;
       
@@ -61,6 +84,7 @@
       }
 
       $scope.turnos_atendidos = [];
+
       $scope.turnos_atendidos_ordenados = () =>
         $scope.turnos_atendidos.sort((a, b) => b - a);
 
@@ -70,6 +94,10 @@
         ).length === 0);
 
       var pila = Array();
+
+      /**
+       * 
+       */
       miturno = (idm, modulo) => {
         var id = $scope.caja.idcaja;
         $.post("<?= site_url('cajas/tomarTurno')?>",
@@ -119,10 +147,10 @@
   </script>
 </head>
 
-<body class="" ng-app="myApp" ng-controller="myCtrl">
+<body class="fondo-gris-oscuro" ng-app="myApp" ng-controller="myCtrl">
   <div class="container" ng-if="!caja">
     <div class="panel panel-default sin-bordes sin-margen">
-      <header class="panel-heading sin-bordes">
+      <header class="panel-heading fondo-negro sin-bordes">
         <h1 class="margen-cabecera">
           Selecciona tu {{areaSeleccionada? 'caja' : 'área'}}
           <button
@@ -135,7 +163,7 @@
           </button>
         </h1>
       </header>
-      <main class="panel-body" ng-if="!areaSeleccionada">
+      <main class="panel-body fondo-gris" ng-if="!areaSeleccionada">
         <div class="div-seleccion">
           <button
             type="button"
@@ -146,7 +174,7 @@
           </button>
         </div>
       </main>
-      <main class="panel-body" ng-if="areaSeleccionada">
+      <main class="panel-body fondo-gris" ng-if="areaSeleccionada">
         <div class="div-seleccion">
           <button
             type="button"
@@ -157,7 +185,7 @@
           </button>
         </div>
       </main>
-      <footer class="panel-footer sin-bordes">
+      <footer class="panel-footer fondo-negro sin-bordes">
         La página se cargó en 
         <strong class="rojo">{elapsed_time}</strong> segundos.
       </footer>
@@ -165,7 +193,7 @@
   </div>
   <div class="container">
     <div class="panel panel-default sin-bordes sin-margen" ng-if="caja">
-      <div class="panel-heading sin-bordes">
+      <div class="panel-heading fondo-negro sin-bordes">
         <h1 class="margen-cabecera">
           Sistema de turnos: Registro Civil
           <span class="glyphicon glyphicon-hd-video gris"></span>
@@ -210,9 +238,9 @@
           Bienvenido a la caja <strong class="verde">{{caja.caja}}</strong>
         </p>
       </div>
-      <div class="panel-body">
+      <div class="panel-body fondo-gris">
         <div class="col-md-3">
-          <div class="panel panel-success panel-grande">
+          <div class="panel panel-success panel-grande fondo-gris">
             <div class="panel-heading">
               <h3 class="panel-title">Llamar un nuevo turno</h3>
             </div>
@@ -240,19 +268,19 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="panel panel-default panel-grande">
+          <div class="panel panel-default panel-grande fondo-gris">
             <div class="panel-heading">
               <h3 class="panel-title">Turno actual</h3>
             </div>
             <div class="panel-body sin-margen">
               <div
                 id="turnoBox"
-                class="jumbotron sin-margen"
+                class="jumbotron sin-margen fondo-gris-claro"
                 ng-if="pendientes.length > 0 || atendiendo">
               </div>
               <div
                 id="turnoBox"
-                class="jumbotron sin-margen"
+                class="jumbotron sin-margen fondo-gris-claro"
                 ng-if="pendientes.length == 0 && !atendiendo">
                 <h2 class="sin-margen">
                   Turno:<br>
@@ -263,11 +291,11 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="panel panel-danger panel-arriba">
+          <div class="panel panel-danger panel-arriba fondo-gris">
             <div class="panel-heading correccion">
               <h3 class="panel-title">Turnos pendientes</h3>
             </div>
-            <div class="panel-body" id="divturnospndientes">
+            <div class="panel-body fondo-gris" id="divturnospndientes">
                 <button
                   type="button"
                   ng-repeat="pendiente in pendientes"
@@ -287,7 +315,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="panel panel-danger panel-abajo">
+          <div class="panel panel-danger panel-abajo fondo-gris">
             <div class="panel-heading correccion">
               <h3 class="panel-title">Turnos atendidos</h3>
             </div>
@@ -310,7 +338,7 @@
           </div>
         </div>
       </div>
-      <div class="panel-footer sin-bordes">
+      <div class="panel-footer fondo-negro sin-bordes">
         <p class="footer sin-margen">
           La página se cargó en <strong class="rojo">{elapsed_time}</strong> 
           segundos.

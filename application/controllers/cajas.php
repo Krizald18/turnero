@@ -103,7 +103,7 @@ class Cajas extends CI_Controller {
       "\n" .
       file_get_contents($file);
     file_put_contents($file, $current);
-    if ($turno != FALSE) {
+    if ($turno != NULL) {
       $salida .= $turno;
     } else {
       $salida .= "No hay pendientes";

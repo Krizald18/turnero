@@ -23,7 +23,7 @@
           avisar.play();
         }
       });
-    }, 6900);
+    }, 10900);
   });
   $(document).ready(() => $('body').css({'opacity': '1'}));
 </script>

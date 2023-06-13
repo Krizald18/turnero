@@ -14,7 +14,7 @@ class Reportes extends CI_Controller {
     $this->output->set_header("HTTP/1.0 200 OK");
     $this->output->set_content_type('application/json');
     $this->output->_display();
-    $reporte = $this->input->post('reporte');
+    $reporte = $this->input->post('reporte', FALSE);
     $query = $this->turnos_model->entregarTurno($reporte);
     echo(json_encode($query));
   }

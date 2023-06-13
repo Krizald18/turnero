@@ -5,10 +5,10 @@ class Usuarios extends CI_Model {
 
   protected $id;
 
-  /**
-   * Conctructor del modelo, aquí establecemos qué tabla utilizamos y cuál es
-   * su llave primaria
-   */
+  /*
+    Constructor del modelo, aqui establecemos
+    que tabla utilizamos y cual es su llave primaria.
+  */
   function __construct() {
     parent::__construct();
     $this->tabla = 'usuarios';

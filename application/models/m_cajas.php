@@ -60,7 +60,7 @@ class M_cajas extends CI_Model {
   }
   
   function getAsignaciones($idcaja) {
-    //Obtengo todos los mudulos asignados a una caja
+    //Obtengo todos los módulos asignados a una caja
     $query = $this->db->query("
       SELECT idmodulo, modulo
       FROM cajas_asignadas ca
@@ -76,12 +76,11 @@ class M_cajas extends CI_Model {
     $query = (PRUEBAS) ?
       "call turno_pruebas($idmodulo, $fecha, $idcaja)" :
       "call turno_obtener($idmodulo, $fecha, $idcaja)";
-    $result = mysql_query($query);
-    if (is_resource($result)) {
-      if(mysql_num_rows($result) > 0) {
-        $line = mysql_fetch_array($result, MYSQL_ASSOC);
-        return $line['turno'];
-      }
+    $conexion = mysqli_connect("localhost", "root", "", "tunero_rc");
+    $result = mysqli_query($conexion, $query);
+    if (mysqli_num_rows($result) > 0) {
+      $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      return $line['turno'];
     }
     return FALSE;
   }
