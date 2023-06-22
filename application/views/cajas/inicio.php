@@ -6,6 +6,8 @@
   <script>
     var API_ROOT = '<?= URL?>index.php/';
     var app = angular.module('myApp', []);
+    var temaOscuro = false;
+
     app.controller('myCtrl', function($scope, $http) {
       $scope.areaSeleccionada = null;
       $scope.atendiendo = false;
@@ -147,10 +149,10 @@
   </script>
 </head>
 
-<body class="fondo-gris-oscuro" ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl">
   <div class="container" ng-if="!caja">
     <div class="panel panel-default sin-bordes sin-margen">
-      <header class="panel-heading fondo-negro sin-bordes">
+      <header class="panel-heading sin-bordes">
         <h1 class="margen-cabecera">
           Selecciona tu {{areaSeleccionada? 'caja' : 'área'}}
           <button
@@ -163,7 +165,7 @@
           </button>
         </h1>
       </header>
-      <main class="panel-body fondo-gris" ng-if="!areaSeleccionada">
+      <main class="panel-body" ng-if="!areaSeleccionada">
         <div class="div-seleccion">
           <button
             type="button"
@@ -174,7 +176,7 @@
           </button>
         </div>
       </main>
-      <main class="panel-body fondo-gris" ng-if="areaSeleccionada">
+      <main class="panel-body" ng-if="areaSeleccionada">
         <div class="div-seleccion">
           <button
             type="button"
@@ -185,7 +187,7 @@
           </button>
         </div>
       </main>
-      <footer class="panel-footer fondo-negro sin-bordes">
+      <footer class="panel-footer sin-bordes">
         La página se cargó en 
         <strong class="rojo">{elapsed_time}</strong> segundos.
       </footer>
@@ -193,7 +195,7 @@
   </div>
   <div class="container">
     <div class="panel panel-default sin-bordes sin-margen" ng-if="caja">
-      <div class="panel-heading fondo-negro sin-bordes">
+      <div class="panel-heading sin-bordes">
         <h1 class="margen-cabecera">
           Sistema de turnos: Registro Civil
           <span class="glyphicon glyphicon-hd-video gris"></span>
@@ -238,9 +240,9 @@
           Bienvenido a la caja <strong class="verde">{{caja.caja}}</strong>
         </p>
       </div>
-      <div class="panel-body fondo-gris">
+      <div class="panel-body">
         <div class="col-md-3">
-          <div class="panel panel-success panel-grande fondo-gris">
+          <div class="panel panel-success panel-grande">
             <div class="panel-heading">
               <h3 class="panel-title">Llamar un nuevo turno</h3>
             </div>
@@ -268,19 +270,19 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="panel panel-default panel-grande fondo-gris">
+          <div class="panel panel-default panel-grande">
             <div class="panel-heading">
               <h3 class="panel-title">Turno actual</h3>
             </div>
             <div class="panel-body sin-margen">
               <div
                 id="turnoBox"
-                class="jumbotron sin-margen fondo-gris-claro"
+                class="jumbotron sin-margen"
                 ng-if="pendientes.length > 0 || atendiendo">
               </div>
               <div
                 id="turnoBox"
-                class="jumbotron sin-margen fondo-gris-claro"
+                class="jumbotron sin-margen"
                 ng-if="pendientes.length == 0 && !atendiendo">
                 <h2 class="sin-margen">
                   Turno:<br>
@@ -291,11 +293,11 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="panel panel-danger panel-arriba fondo-gris">
+          <div class="panel panel-danger panel-arriba">
             <div class="panel-heading correccion">
               <h3 class="panel-title">Turnos pendientes</h3>
             </div>
-            <div class="panel-body fondo-gris" id="divturnospndientes">
+            <div class="panel-body" id="divturnospndientes">
                 <button
                   type="button"
                   ng-repeat="pendiente in pendientes"
@@ -315,7 +317,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="panel panel-danger panel-abajo fondo-gris">
+          <div class="panel panel-danger panel-abajo">
             <div class="panel-heading correccion">
               <h3 class="panel-title">Turnos atendidos</h3>
             </div>
@@ -338,7 +340,7 @@
           </div>
         </div>
       </div>
-      <div class="panel-footer fondo-negro sin-bordes">
+      <div class="panel-footer sin-bordes">
         <p class="footer sin-margen">
           La página se cargó en <strong class="rojo">{elapsed_time}</strong> 
           segundos.

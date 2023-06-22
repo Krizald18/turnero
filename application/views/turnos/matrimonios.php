@@ -7,6 +7,7 @@
   var API_ROOT = '<?= URL; ?>index.php/';
   var app = angular.module('myApp', []);
   var avisar = new Audio('<?= SND;?>ding2.mp3');
+  var prioritario = true;
   app.controller('matrCtrl', function($scope, $http) {
     setInterval(function() {
       $http({
@@ -23,7 +24,7 @@
           avisar.play();
         }
       });
-    }, 10900);
+    }, 6900);
   });
   $(document).ready(() => $('body').css({'opacity': '1'}));
 </script>
@@ -55,6 +56,9 @@
           <strong>
             {{"00".substring((turno.caja + "").length, 3) + turno.caja}}
           </strong>
+          <!-- <strong ng-if="prioritario">
+            {{"N00".substring((turno.caja + "").length, 3) + turno.caja}}
+          </strong> -->
         </td>
       </tr>
     </tbody>

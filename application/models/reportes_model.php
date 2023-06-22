@@ -8,7 +8,7 @@ class Turnos_model extends CI_Model {
   function entregarReporte($reporte) {
     $data = $this->db->query("
       SELECT *
-      FROM $reporte
+      FROM $reporte"
     );
     return $data;
   }

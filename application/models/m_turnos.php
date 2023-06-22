@@ -18,7 +18,7 @@ class M_turnos extends CI_Model {
       FROM $turnos_mostrar
       ORDER BY idturno DESC"
     );
-    sleep(14);
+    sleep(7);
     if ($lista->num_rows() > 0) {
       foreach ($lista->result() as $registro) {
         if (intval($registro->mostrado) === 0) {

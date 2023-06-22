@@ -29,6 +29,18 @@
   color: #eee;
   background-color: #666;
 }
+.fondo-blanco-claro {
+  color: #333;
+  background-color: #ccc;
+}
+.fondo-blanco {
+  color: #333;
+  background-color: #bbb;
+}
+.fondo-blanco-oscuro {
+  color: #333;
+  background-color: #999;
+}
 .fondo-rojo {
   background-color: #d54;
 }
