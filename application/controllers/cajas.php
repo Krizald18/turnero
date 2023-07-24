@@ -11,6 +11,7 @@ class Cajas extends CI_Controller {
 
   function index() {
     $dato['titulo'] = 'Cajas - Sistema de Turnos';
+    $dato['descripcion'] = 'Página de acceso a cajas del sistema de turnos del registro civil, seleccione su módulo y su caja para comenzar a llamar turnos';
     $this->load->view('cabecera', $dato);
     $items['combo'] = $this->m_cajas->listarModulos();
     $this->load->view('cajas/inicio', $items);

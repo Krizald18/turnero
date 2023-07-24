@@ -1,4 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);
+@keyframes animar {
+  0% {transform: scale(1, 1); background: #1aa;}
+  14% {transform: scale(1.03, 1.03); background: #a11;}
+  28% {transform: scale(1, 1); background: #1aa;}
+  42% {transform: scale(1.03, 1.03); background: #222;}
+  57% {transform: scale(1, 1); background: #1aa;}
+  71% {transform: scale(1.03, 1.03); background: #a11;}
+  85% {transform: scale(1, 1); background: #1aa;}
+  100% {transform: scale(1.03, 1.03); background: #222;}
+}
 body {
   line-height: 1.42857143;
   font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -51,6 +61,8 @@ th {
 .alertax {
   background: #26d;
   border-color: #d92 !important;
+  animation-name: animar;
+  animation-duration: 10s;
 }
 .turnox {
   background: #222;

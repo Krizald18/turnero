@@ -74,7 +74,7 @@
 */
 
 $active_group = 'default';
-$query_builder = FALSE;
+$query_builder = TRUE;
 
 $db['default'] = array(
   'dsn' => '',
@@ -89,7 +89,7 @@ $db['default'] = array(
   'cache_on' => FALSE,
   'cachedir' => '',
   'char_set' => 'utf8',
-  'dbcollat' => 'utf8_general_ci',
+  'dbcollat' => 'utf8mb4_spanish_ci',
   'swap_pre' => '',
   'encrypt' => FALSE,
   'compress' => FALSE,
