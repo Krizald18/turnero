@@ -4,9 +4,9 @@
   <script src="<?= JS ?>angularJS.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?= CSS ?>newPantalla.css">
   <script>
-    var API_ROOT = '<?= URL ?>index.php/';
-    var app = angular.module('myApp', []);
-    var avisar = new Audio('<?= SND ?>ding2.mp3');
+    let API_ROOT = '<?= URL ?>index.php/';
+    let app = angular.module('myApp', []);
+    let avisar = new Audio('<?= SND ?>ding2.mp3');
     app.controller('matrCtrl', async function($scope, $http) {
       setInterval(function() {
         $http({

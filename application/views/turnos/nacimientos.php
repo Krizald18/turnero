@@ -4,17 +4,17 @@
   <script src="<?= JS ?>angularJS.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?= CSS ?>semantic.min.css">
   <script>
-    var API_ROOT = '<?= URL ?>index.php/';
-    var app = angular.module('myApp', []);
-    var turnos = [];
-    var diciendoTurnos = false;
+    let API_ROOT = '<?= URL ?>index.php/';
+    let app = angular.module('myApp', []);
+    let turnos = [];
+    let diciendoTurnos = false;
     app.controller('nacCtrl', async function($scope, $http) {
       const decirTurno = async function() {
         if (turnos.length > 0) {
           new Promise(resolve => {
             if (turnos.length > 0) {
               t = turnos.pop();
-              var u = new SpeechSynthesisUtterance();
+              let u = new SpeechSynthesisUtterance();
               u.lang = 'es-MX';
               u.rate = 1.2;
               u.text = `turno ${Number(t.turno)} de ${t.modulo} pase a caja ${Number(t.caja)}`;
@@ -22,7 +22,7 @@
               speechSynthesis.speak(u); // poner ese turno en pantalla
               console.log('deberia decir el turno', t.turno);
               let turnosEnPantalla = [];
-              for (var tur of $scope.turnos) {
+              for (let tur of $scope.turnos) {
                 if (tur.idturno == t.idturno) {
                   turnosEnPantalla.push(t);
                 } else {
@@ -40,7 +40,7 @@
           });
         }
       }
-      var intervalId = null;
+      let intervalId = null;
 
       const checar = function() {
         $http({
@@ -73,7 +73,7 @@
           }
         });
       };
-      var intervalId = setInterval(checar, 4000);
+      let intervalId = setInterval(checar, 4000);
     });
     $(document).ready(() => $('body').css({'opacity': '1'}));
   </script>

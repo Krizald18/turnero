@@ -1,6 +1,6 @@
 <script>
   function obtenerFecha() {
-    var fecha = new Date();
+    let fecha = new Date();
     anio = fecha.getFullYear().toString();
     mes = (fecha.getMonth() + 1).toString();
     dia = fecha.getDate().toString();

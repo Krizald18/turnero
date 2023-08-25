@@ -4,8 +4,8 @@
   <script src="<?= JS ?>angularJS.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?= CSS ?>new-cajas.css">
   <script>
-    var API_ROOT = '<?= URL ?>index.php/';
-    var app = angular.module('myApp', []);
+    let API_ROOT = '<?= URL ?>index.php/';
+    let app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
       $scope.areaSeleccionada = null;
       $scope.atendiendo = false;
@@ -93,13 +93,13 @@
           p => Number(p.idmodulo) === Number(modulo.idmodulo)
         ).length === 0);
 
-      var pila = Array();
+      let pila = Array();
 
       /**
        * 
        */
       miturno = (idm, modulo) => {
-        var id = $scope.caja.idcaja;
+        let id = $scope.caja.idcaja;
         $.post(
           "<?= site_url('cajas/tomarTurno') ?>",
           {idcaja: id, idmodulo: idm},
@@ -109,7 +109,7 @@
               $scope.turnos_atendidos.pop();
             }
             $scope.turnos_atendidos.push(data);
-            var turno =
+            let turno =
               "<h2 class='sin-margen'>" +
                 "Turno:</br>" +
                 "<span class='label label-danger'>" +

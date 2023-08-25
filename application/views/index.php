@@ -9,7 +9,7 @@
       });
 
       function obtenerFecha() {
-        var fecha = new Date();
+        let fecha = new Date();
         anio = fecha.getFullYear().toString();
         mes = (fecha.getMonth() + 1).toString();
         dia = fecha.getDate().toString();
@@ -31,7 +31,7 @@
             idmodulo: idmodulo,
             prioritario: prioritario
           }, // Datos a enviar
-          url: '<?= URL ?>/index.php/turnos/dar', // A dónde se enviará
+          url: '<?= URL ?>index.php/turnos/dar', // A dónde se enviará
           type: 'POST', // Método para enviar los datos
           cache: false, // No queremos que los datos se guarden en caché
           // Antes de enviar los datos:
@@ -95,16 +95,16 @@
       });
 
       $("#btnDomicilio").click(function() {
-        var id = 16;
-        var modulo = 'Matrimonios a domicilio';
-        var prioritario = 0;
+        let id = 16;
+        let modulo = 'Matrimonios a domicilio';
+        let prioritario = 0;
         obtenerTurno(id, modulo, "#btnDomicilio", prioritario);
       });
 
       $("#btnDomicilioPrioritario").click(function() {
-        var id = 16;
-        var modulo = 'Matrimionios a domicilio';
-        var prioritario = 1;
+        let id = 16;
+        let modulo = 'Matrimionios a domicilio';
+        let prioritario = 1;
         obtenerTurno(id, modulo, "#btnDomicilioPrioritario", prioritario);
       });
 
